@@ -1,9 +1,10 @@
 
 .allArticles {
   margin-top: 15px;
-  border: 2px solid grey;
+  border: 0.5px solid grey;
  width: 60%;
- margin-left: 20%
+ margin-left: 20%;
+ padding: 2%
 }
 
 .userInfo {

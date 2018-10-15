@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Router } from '@reach/router';
 import Nav from './components/Nav';
 import Articles from './components/Articles';
+import ArticleDisplay from './components/ArticleDisplay';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Chart from './components/Chart'
@@ -14,9 +16,13 @@ class App extends Component {
         <Nav />
         <Login />
         <Chart />
-        <Articles />
+        <Router>
+          <Articles path="/" />
+          <ArticleDisplay path="articles/:articleId" />
+        </Router>
+
         <Footer />
-      </div>
+      </div >
     );
   }
 }
