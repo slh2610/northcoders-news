@@ -18,6 +18,7 @@ class App extends Component {
         <Chart />
         <Router>
           <Articles path="/" />
+          <Articles path="/topics/:topic/articles" />
           <ArticleDisplay path="articles/:articleId" />
         </Router>
 

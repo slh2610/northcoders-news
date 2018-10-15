@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import PropTypes from 'prop-types';
 import * as api from '../api';
 import './Articles.css'
 
@@ -25,7 +26,7 @@ class Articles extends Component {
   }
 
   componentDidMount() {
-    this.fetchArticles();
+    this.getArticlesByTopic();
   }
 
   fetchArticles = () => {
@@ -36,6 +37,29 @@ class Articles extends Component {
         });
       });
   };
+
+  getArticlesByTopic = () => {
+    if (this.props.topic) {
+      api.getArticlesByTopic(this.props.topic)
+        .then(articles => {
+          this.setState({
+            articles
+          })
+        })
+    } else {
+      this.fetchArticles()
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.topic !== prevProps.topic) {
+      this.getArticlesByTopic()
+    }
+  }
+}
+
+Articles.propTypes = {
+  topic: PropTypes.string
 }
 
 export default Articles

@@ -5,9 +5,12 @@ const Nav = () => {
   return (
     <nav>
       <Link to="/">Home</Link>
-      <Link to="/articles">Coding</Link>
-      <Link to="/articles">Cooking</Link>
-      <Link to="/articles">Football</Link>
+      {" | "}
+      <Link to="/topics/coding/articles">Coding</Link>
+      {" | "}
+      <Link to="/topics/cooking/articles">Cooking</Link>
+      {" | "}
+      <Link to="/topics/football/articles">Football</Link>
     </nav>
   )
 }

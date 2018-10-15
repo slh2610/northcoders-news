@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as api from '../api';
 
 class ArticleDisplay extends Component {
@@ -36,6 +37,10 @@ class ArticleDisplay extends Component {
       })
   }
 
+}
+
+ArticleDisplay.propTypes = {
+  articleId: PropTypes.string
 }
 
 export default ArticleDisplay
