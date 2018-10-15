@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 class Chart extends Component {
   render() {
     return (
-      <sidebar className="sidebar">
+      <section className="sidebar">
 
-      </sidebar>
+      </section>
     )
   }
 }
