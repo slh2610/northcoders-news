@@ -3,7 +3,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1.25fr 4fr;
-  grid-template-rows: 1.5fr 0.5fr 6fr 0.5fr;
+  grid-template-rows: 1fr 0.5fr 6fr 0.5fr;
   grid-template-areas:
   'header header'
   'login nav'

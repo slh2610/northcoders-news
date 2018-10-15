@@ -1,0 +1,16 @@
+
+.allArticles {
+  margin-top: 15px;
+  border: 2px solid grey;
+ width: 60%;
+ margin-left: 20%
+}
+
+.userInfo {
+  display: inline-flex
+}
+
+img {
+  height: 10%;
+  width: 10%
+}
