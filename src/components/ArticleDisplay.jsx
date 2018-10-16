@@ -9,7 +9,7 @@ class ArticleDisplay extends Component {
   state = {
     article: {}
   }
-  created_at
+
   render() {
     const { title, body, created_at, created_by, comment_count } = this.state.article
     if (!this.state.article.title) return <p>Loading....</p>
@@ -21,7 +21,7 @@ class ArticleDisplay extends Component {
         <div className="userVotesComments">
           <p>{created_by.username}</p> <img src={created_by.avatar_url} alt="user avatar"></img>
           <VotingTool id={this.state.article._id} itemType="article" votes={this.state.article.votes} />
-          <Comments articleId={this.state.article._id} />
+          <Comments articleId={this.state.article._id} user={this.props.user} />
         </div>
       </main >
     )

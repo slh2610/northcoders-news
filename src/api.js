@@ -34,3 +34,8 @@ export const getComments = (id) => {
     .then(({ data }) => (data.comment))
 }
 
+export const addComment = (id, comment) => {
+  console.log(comment)
+  return axios.post(`${API_URL}/articles/${id}/comments`, comment)
+}
+

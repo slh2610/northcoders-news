@@ -26,7 +26,7 @@ class App extends Component {
         <Router>
           <Articles path="/" />
           <Articles path="/topics/:topic/articles" />
-          <ArticleDisplay path="articles/:articleId" />
+          <ArticleDisplay path="articles/:articleId" user={this.state.user} />
         </Router>
 
         <Footer />
