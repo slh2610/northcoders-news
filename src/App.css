@@ -3,9 +3,9 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1.25fr 4fr;
-  grid-template-rows: 1fr 0.5fr 6fr 0.5fr;
+  grid-template-rows: 1fr 0.6fr 6fr 0.5fr;
   grid-template-areas:
-  'header header'
+  'login header'
   'login nav'
   'sidebar main'
   'footer footer'
@@ -17,9 +17,10 @@ header {
   grid-area: header
 }
 
-button {
+.loginComponent {
   border: 1px solid grey;
   background-color: aquamarine;
+  padding: 10px;
   grid-area: login
 }
 

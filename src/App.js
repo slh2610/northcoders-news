@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Router } from '@reach/router';
+import * as api from './api';
 import Nav from './components/Nav';
 import Articles from './components/Articles';
 import ArticleDisplay from './components/ArticleDisplay';
@@ -9,12 +10,17 @@ import Chart from './components/Chart'
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    user: {}
+  }
+
   render() {
     return (
       <div className="App">
         <header><h1>Northcoder's News</h1></header>
         <Nav />
-        <Login />
+        <Login fetchUser={this.fetchUser} user={this.state.user} />
         <Chart />
         <Router>
           <Articles path="/" />
@@ -25,6 +31,15 @@ class App extends Component {
         <Footer />
       </div >
     );
+  }
+
+  fetchUser = (username) => {
+    api.getUserByUsername(username)
+      .then(data => {
+        this.setState({
+          user: data
+        })
+      })
   }
 }
 

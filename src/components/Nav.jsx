@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from '@reach/router'
+import { Link } from '@reach/router';
+import './Nav.css'
 
 const Nav = () => {
   return (
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/" className="link">Home</Link>
       {" | "}
-      <Link to="/topics/coding/articles">Coding</Link>
+      <Link to="/topics/coding/articles" className="link">Coding</Link>
       {" | "}
-      <Link to="/topics/cooking/articles">Cooking</Link>
+      <Link to="/topics/cooking/articles" className="link">Cooking</Link>
       {" | "}
-      <Link to="/topics/football/articles">Football</Link>
+      <Link to="/topics/football/articles" className="link">Football</Link>
     </nav>
   )
 }
