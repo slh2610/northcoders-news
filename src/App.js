@@ -12,7 +12,8 @@ import './App.css';
 class App extends Component {
 
   state = {
-    user: {}
+    user: {},
+    loggedIn: false
   }
 
   render() {
@@ -20,7 +21,7 @@ class App extends Component {
       <div className="App">
         <header><h1>Northcoder's News</h1></header>
         <Nav />
-        <Login fetchUser={this.fetchUser} user={this.state.user} />
+        <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} logout={this.logout} />
         <Chart />
         <Router>
           <Articles path="/" />
@@ -37,9 +38,17 @@ class App extends Component {
     api.getUserByUsername(username)
       .then(data => {
         this.setState({
-          user: data
+          user: data,
+          loggedIn: true
         })
       })
+  }
+
+  logout = () => {
+    this.setState({
+      user: {},
+      loggedIn: false
+    })
   }
 }
 

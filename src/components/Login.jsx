@@ -6,14 +6,13 @@ import './Login.css'
 class Login extends Component {
   state = {
     username: "",
-    password: "",
-    loggedIn: false
+    password: ""
   }
 
   render() {
     const { username, avatar_url } = this.props.user
     return (
-      !this.state.loggedIn ?
+      !this.props.loggedIn ?
         <form onSubmit={this.handleSubmit} className="loginComponent">
           <label>Username: </label>
           <input type="text" value={this.state.username} name="username" onChange={this.handleChange}></input>
@@ -25,7 +24,7 @@ class Login extends Component {
         </form >
         : <div className="loginComponent">
           <p>Logged in as: <br></br><img src={avatar_url} alt="user avatar" className="login-img"></img>  {username}</p>
-          <Logout logout={this.logout} />
+          <Logout logout={this.props.logout} />
         </div>
     )
   }
@@ -43,21 +42,13 @@ class Login extends Component {
     this.setState({
       username: "",
       password: "",
-      loggedIn: true
     })
   }
-
-  logout = () => {
-    this.setState({
-      loggedIn: false
-    })
-  }
-
 }
-
 
 Login.propTypes = {
   fetchUser: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 }
 

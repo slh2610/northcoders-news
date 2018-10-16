@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ArticleDisplay.css'
+import './ArticleDisplay.css';
+import VotingTool from './VotingTool'
 import * as api from '../api';
 
 class ArticleDisplay extends Component {
@@ -9,7 +10,7 @@ class ArticleDisplay extends Component {
   }
 
   render() {
-    const { title, body, created_at, created_by, votes, comment_count } = this.state.article
+    const { title, body, created_at, created_by, comment_count } = this.state.article
     if (!this.state.article.title) return <p>Loading....</p>
     return (
       <main>
@@ -18,7 +19,7 @@ class ArticleDisplay extends Component {
         <p>{created_at}</p>
         <div className="userVotesComments">
           <p>{created_by.username}</p> <img src={created_by.avatar_url} alt="user avatar"></img>
-          <p>Votes: {votes}</p>
+          <VotingTool article={this.state.article} />
           <p>Comments: {comment_count}</p>
         </div>
       </main >
@@ -41,7 +42,7 @@ class ArticleDisplay extends Component {
 }
 
 ArticleDisplay.propTypes = {
-  articleId: PropTypes.string
+  articleId: PropTypes.string.isRequired
 }
 
 export default ArticleDisplay

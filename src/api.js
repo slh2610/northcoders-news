@@ -20,3 +20,7 @@ export const getUserByUsername = (username) => {
   return axios.get(`${API_URL}/users/${username}`)
     .then(({ data }) => (data))
 }
+
+export const changeVotes = (id, direction) => {
+  return axios.patch(`${API_URL}/articles/${id}?vote=${direction}`)
+}
