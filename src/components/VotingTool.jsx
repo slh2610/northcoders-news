@@ -8,7 +8,7 @@ class VotingTool extends Component {
   }
 
   render() {
-    const { votes } = this.props.article
+    const { votes } = this.props
     const { voteModifier } = this.state
 
     return (
@@ -21,17 +21,18 @@ class VotingTool extends Component {
   }
 
   modifyVotes = (direction) => {
-    const { _id } = this.props.article
+    const { id, itemType } = this.props
     this.setState({
       voteModifier: direction === "up" ? 1 : -1
     })
-    api.changeVotes(_id, direction)
+    api.changeVotes(id, direction, itemType)
   }
-
 }
 
 VotingTool.propTypes = {
-  article: PropTypes.object.isRequired,
+  votes: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  itemType: PropTypes.string.isRequired
 }
 
 export default VotingTool

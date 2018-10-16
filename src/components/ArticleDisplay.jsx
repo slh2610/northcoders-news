@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './ArticleDisplay.css';
-import VotingTool from './VotingTool'
+import VotingTool from './VotingTool';
+import Comments from './Comments';
+import dayjs from 'dayjs';
 import * as api from '../api';
 
 class ArticleDisplay extends Component {
   state = {
     article: {}
   }
-
+  created_at
   render() {
     const { title, body, created_at, created_by, comment_count } = this.state.article
     if (!this.state.article.title) return <p>Loading....</p>
@@ -16,11 +17,11 @@ class ArticleDisplay extends Component {
       <main>
         <h2>{title}</h2>
         <p>{body}</p>
-        <p>{created_at}</p>
+        <p>{dayjs(created_at).format('MMMM D YYYY, h:mm:ss a')}</p>
         <div className="userVotesComments">
           <p>{created_by.username}</p> <img src={created_by.avatar_url} alt="user avatar"></img>
-          <VotingTool article={this.state.article} />
-          <p>Comments: {comment_count}</p>
+          <VotingTool id={this.state.article._id} itemType="article" votes={this.state.article.votes} />
+          <Comments articleId={this.state.article._id} />
         </div>
       </main >
     )
@@ -41,8 +42,5 @@ class ArticleDisplay extends Component {
 
 }
 
-ArticleDisplay.propTypes = {
-  articleId: PropTypes.string.isRequired
-}
 
 export default ArticleDisplay
