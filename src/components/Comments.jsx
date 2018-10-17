@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import VotingTool from './VotingTool';
 import CommentAdder from './CommentAdder';
+import DeleteTool from './DeleteTool';
 import dayjs from 'dayjs';
 import * as api from '../api';
 
@@ -23,6 +24,7 @@ class Comments extends Component {
               <p>{dayjs(created_at).format('MMMM D YYYY, h:mm:ss a')}</p>
               <p><img src={created_by.avatar_url} alt="user avatar"></img>{created_by.username}</p>
               <VotingTool votes={votes} id={_id} itemType="comment" />
+              {comment.created_by._id === this.props.user._id && <DeleteTool id={comment._id} deleteComment={this.deleteComment} />}
             </div>
           })}
         </ul>
@@ -50,6 +52,17 @@ class Comments extends Component {
           comments: [comment, ...this.state.comments]
         })
       })
+  }
+
+  deleteComment = (id) => {
+    const deletedComments = this.state.comments.filter(comment => {
+      return comment._id !== id
+    })
+    this.setState({
+      comments: deletedComments
+    })
+
+    api.deleteComment(id)
   }
 
 }

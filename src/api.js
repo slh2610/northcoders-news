@@ -35,7 +35,9 @@ export const getComments = (id) => {
 }
 
 export const addComment = (id, comment) => {
-  console.log(comment)
   return axios.post(`${API_URL}/articles/${id}/comments`, comment)
 }
 
+export const deleteComment = (id) => {
+  return axios.delete(`${API_URL}/comments/${id}`, id)
+} 
