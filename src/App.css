@@ -7,13 +7,14 @@
   grid-template-areas:
   'login header'
   'login nav'
-  'articles articles' 
+  'main main' 
   'footer footer'
 }
 
 header {
   border: 1px solid black;
-  background-color: bisque;
+  background-color: blue;
+  color: white;
   grid-area: header
 }
 
@@ -30,8 +31,9 @@ nav {
 }
 
 .articles {
-  border: 1px solid grey;
-  grid-area: articles
+  width: 100%;
+  height: 100%;
+  grid-area: main
 }
 
 footer {

@@ -1,45 +1,60 @@
-.articles {
-  margin-top: 10px;
+.allArticles {
   border: 0.5px solid grey;
- width: 100%;
- /* margin-left: 15%; */
- padding: 1%;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1.25fr 4fr;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas: 
-  "sidebar display"
+  "chart display"
+  "bar display"
+}
+
+.display {
+  border: 0.5px solid black;
+  width: 100%;
+  overflow: scroll;
+  grid-area: display
+}
+
+ .chart {
+  border: 0.5px solid;
+  color: grey;
+  grid-area: chart
+}
+
+.bar {
+  height: 80%;
+  grid-area: bar
+}
+
+.article {
+  width: 85%;
+  margin-left: 7.5%
+}
+
+img {
+  height: 5%;
+  width: 5%
 }
 
 .articleTitle {
-  text-decoration: none;
-  margin-bottom: 0%;
+  text-decoration-line: none;
+  margin-bottom: 1%;
   border: 0.5px solid black;
   border-bottom: none;
-  border-right: none;
-  font-size: 24px;
-  color:  #333;
-  font-weight: bold;
-  grid-area: articleTitle
+  font-size: 20px;
+  color: grey;
 }
 
 .articleBody {
   height: 85px;
+  font-size: 14px;
+  border: 0.5px solid;
   overflow: hidden;
   margin-top: 0%;
   margin-bottom: 3%;
   text-align: justify;
   padding: 10px;
-  grid-area: articleBody
-}
-
-.display {
-  border: 0.5px solid black;
-  grid-area: display
-}
-
- .chart {
-  border: 1px solid black;
-  grid-area: sidebar
 }
 
 .userInfo {
@@ -47,10 +62,9 @@
   display: inline-flex;
   border: 0.5px solid black;
   border-right: 0px;
-  grid-area: userInfo
 }
 
-img {
-  height: 5%;
-  width: 5%
+.pie {
+  height: 300px;
+  width: 300px
 }

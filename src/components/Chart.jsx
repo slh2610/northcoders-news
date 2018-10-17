@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
+import './Chart.css'
 
 const Chart = ({ articles }) => {
 
@@ -31,8 +32,6 @@ const Chart = ({ articles }) => {
     return obj.value
   })
 
-  console.log(articles)
-
   const data = {
     labels: titles.slice(0, 5),
 
@@ -45,7 +44,10 @@ const Chart = ({ articles }) => {
         '#04B404',
         '#B45F04'
       ],
-    }]
+      width: 500,
+      height: 100
+    },
+    ]
   };
 
   return (
@@ -53,7 +55,7 @@ const Chart = ({ articles }) => {
       <h2>Most Popular Articles</h2>
       <Pie data={data} />
     </div >
-  );
+  )
 }
 
 export default Chart

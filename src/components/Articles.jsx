@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import Chart from './Chart';
+import UserArticles from './UserArticles';
 import PropTypes from 'prop-types';
 import * as api from '../api';
 import './Articles.css'
@@ -13,13 +14,16 @@ class Articles extends Component {
 
   render() {
     return (
-      <div className="articles">
+      <main className="allArticles">
         <Chart articles={this.state.articles} className="chart" />
-        <section className="display" >
+        <UserArticles articles={this.state.articles} className="barChart" />
+        <div className="display">
           {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
           {this.state.articles.map(article => {
-            return <div className="allArticles" key={article._id}>
-              <Link to={`/articles/${article._id}`}><h2 className="articleTitle">{article.title}</h2></Link>
+            return <div key={article._id} className="article">
+              <Link style={{ textDecoration: 'none' }} to={`/articles/${article._id}`}>
+                <h2 className="articleTitle">{article.title}</h2>
+              </Link>
               <p className="articleBody">{article.body}</p>
               <div className="userInfo">
                 <img src={article.created_by.avatar_url} alt="user avatar"></img>
@@ -27,9 +31,8 @@ class Articles extends Component {
               </div>
             </div>
           })}
-        </section>
-
-      </div>
+        </div>
+      </main>
     )
   }
 

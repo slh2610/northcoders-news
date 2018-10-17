@@ -21,8 +21,7 @@ class App extends Component {
         <header><h1>Northcoder's News</h1></header>
         <Nav user={this.state.user} />
         <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} logout={this.logout} />
-        <h2></h2>
-        <Router>
+        <Router className="articles">
           <Articles path="/" />
           <Articles path="/topics/:topic/articles" loggedIn={this.state.loggedIn} user={this.state.user} />
           <ArticleDisplay path="articles/:articleId" user={this.state.user} loggedIn={this.state.loggedIn} />
