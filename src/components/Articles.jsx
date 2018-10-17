@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import Chart from './Chart';
 import PropTypes from 'prop-types';
 import * as api from '../api';
 import './Articles.css'
@@ -12,19 +13,23 @@ class Articles extends Component {
 
   render() {
     return (
-      <main>
-        {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
-        {this.state.articles.map(article => {
-          return <div className="allArticles" key={article._id}>
-            <Link to={`/articles/${article._id}`}><h2>{article.title}</h2></Link>
-            <p>{article.body}</p>
-            <div className="userInfo">
-              <img src={article.created_by.avatar_url} alt="user avatar"></img>
-              <p>{article.created_by.username}</p>
+      <div className="articles">
+        <Chart articles={this.state.articles} className="chart" />
+        <section className="display" >
+          {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
+          {this.state.articles.map(article => {
+            return <div className="allArticles" key={article._id}>
+              <Link to={`/articles/${article._id}`}><h2 className="articleTitle">{article.title}</h2></Link>
+              <p className="articleBody">{article.body}</p>
+              <div className="userInfo">
+                <img src={article.created_by.avatar_url} alt="user avatar"></img>
+                <p>{article.created_by.username}</p>
+              </div>
             </div>
-          </div>
-        })}
-      </main>
+          })}
+        </section>
+
+      </div>
     )
   }
 

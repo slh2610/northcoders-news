@@ -13,7 +13,7 @@ class ArticleAdder extends Component {
 
     return (
       <div>
-        <form className="main" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <select onChange={this.handleChange} value={this.state.belongs_to} name="belongs_to">
             <option>Please Choose a Topic</option>
             {topics.map(topic => {

@@ -20,7 +20,7 @@ class Login extends Component {
           <label>Password: </label>
           <input type="password" value={this.state.password} name="password" onChange={this.handleChange}></input>
           <br></br>
-          <button>Login</button>
+          <button className="loginButton">Login</button>
         </form >
         : <div className="loginComponent">
           <p>Logged in as: <br></br><img src={avatar_url} alt="user avatar" className="login-img"></img>  {username}</p>
