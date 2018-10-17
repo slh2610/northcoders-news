@@ -3,6 +3,7 @@ import { Link } from '@reach/router';
 import PropTypes from 'prop-types';
 import * as api from '../api';
 import './Articles.css'
+import ArticleAdder from './ArticleAdder';
 
 class Articles extends Component {
   state = {
@@ -12,8 +13,10 @@ class Articles extends Component {
   render() {
     return (
       <main>
+        {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
         {this.state.articles.map(article => {
-          return <div className="allArticles" key={article._id}> <Link to={`/articles/${article._id}`}><h2>{article.title}</h2></Link>
+          return <div className="allArticles" key={article._id}>
+            <Link to={`/articles/${article._id}`}><h2>{article.title}</h2></Link>
             <p>{article.body}</p>
             <div className="userInfo">
               <img src={article.created_by.avatar_url} alt="user avatar"></img>
@@ -56,10 +59,19 @@ class Articles extends Component {
       this.getArticlesByTopic()
     }
   }
+
+  addArticle = (topic, article) => {
+    api.postArticle(topic, article)
+      .then(() => {
+        this.setState({
+          articles: [article, ...this.state.articles]
+        })
+      })
+  }
 }
 
 Articles.propTypes = {
-  topic: PropTypes.string
+  loggedIn: PropTypes.bool.isRequired
 }
 
 export default Articles

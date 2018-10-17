@@ -20,15 +20,14 @@ class App extends Component {
     return (
       <div className="App">
         <header><h1>Northcoder's News</h1></header>
-        <Nav />
-        <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} logout={this.logout} />
+        <Nav user={this.state.user} />
         <Chart />
+        <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} logout={this.logout} />
         <Router>
           <Articles path="/" />
-          <Articles path="/topics/:topic/articles" />
-          <ArticleDisplay path="articles/:articleId" user={this.state.user} />
+          <Articles path="/topics/:topic/articles" loggedIn={this.state.loggedIn} user={this.state.user} />
+          <ArticleDisplay path="articles/:articleId" user={this.state.user} loggedIn={this.state.loggedIn} />
         </Router>
-
         <Footer />
       </div >
     );

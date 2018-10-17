@@ -21,6 +21,11 @@ export const getArticleById = (id) => {
     .then(({ data }) => (data.article))
 }
 
+export const postArticle = (topic, article) => {
+  return axios.post(`${API_URL}/topics/${topic}/articles`, article)
+
+}
+
 export const getUserByUsername = (username) => {
   return axios.get(`${API_URL}/users/${username}`)
     .then(({ data }) => (data))

@@ -22,7 +22,6 @@ class CommentAdder extends Component {
   }
 
   handleSubmit = (event) => {
-    console.log(Math.random())
     event.preventDefault()
     const { user, articleId } = this.props
     const comment = { body: this.state.commentText, created_by: { _id: user._id, username: user.username, avatar_url: user.avatar_url }, votes: 0 }

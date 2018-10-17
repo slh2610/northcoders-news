@@ -16,27 +16,36 @@ Add classNames Create and .css files Write application CSS - sitewide styling ch
 ##End Points
 GET /api
 
-4: GET /api/topics
+4: GET /api/topics *
 
-5: GET /api/topics/:topic_slug/articles
+5: GET /api/topics/:topic_slug/articles *
 
 8: POST /api/topics/:topic_slug/articles
 
-1: GET /api/articles
+1: GET /api/articles *
 
-2: GET /api/articles/:article_id
+2: GET /api/articles/:article_id *
 
-3: GET /api/articles/:article_id/comments
+3: GET /api/articles/:article_id/comments *
 
-7: POST /api/articles/:article_id/comments
+7: POST /api/articles/:article_id/comments *
 
-10: PATCH /api/articles/:article_id?vote=up (to increment votes by one) /api/articles/:article_id?vote=down (to decrease votes by one)
+10: PATCH /api/articles/:article_id?vote=up (to increment votes by one) /api/articles/:article_id?vote=down (to decrease votes by one) *
 
-11: PATCH /api/comments/:comment_id?vote=up (to increment votes by one) /api/comments/:comment_id?vote=down (to decrease votes by one)
+11: PATCH /api/comments/:comment_id?vote=up (to increment votes by one) /api/comments/:comment_id?vote=down (to decrease votes by one) *
 
-9: DELETE /api/comments/:comment_id
+9: DELETE /api/comments/:comment_id *
 
-6: GET /api/users/:username
+6: GET /api/users/:username *
 
 ##Components
 1: Articles 2: ArticleById 3: AddArticle 4: Comments 5: AddComment 6: Sign in 7: Logout 8: NavBar 9: VoteChange 10: popular articles 11: Active Users
+
+##To-Do
+change the H1 of the webpage to the type of topic.
+Refactor the getArticleByTopic part.
+Put some sort of feedback if the wrong username is input
+Check all prop-types
+Check all keys
+Check to see if it is DRY
+Testing
