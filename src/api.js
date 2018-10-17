@@ -1,6 +1,11 @@
 import axios from 'axios';
 const API_URL = 'https://sallysnc-news.herokuapp.com/api'
 
+export const getTopics = () => {
+  return axios.get(`${API_URL}/topics`)
+    .then(({ data }) => (data.topics))
+}
+
 export const getArticles = () => {
   return axios.get(`${API_URL}/articles`)
     .then(({ data }) => (data.articles))

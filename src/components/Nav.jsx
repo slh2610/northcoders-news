@@ -1,19 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from '@reach/router';
+import * as api from '../api'
 import './Nav.css'
 
-const Nav = () => {
-  return (
-    <nav>
-      <Link to="/" className="link">Home</Link>
-      {" | "}
-      <Link to="/topics/coding/articles" className="link">Coding</Link>
-      {" | "}
-      <Link to="/topics/cooking/articles" className="link">Cooking</Link>
-      {" | "}
-      <Link to="/topics/football/articles" className="link">Football</Link>
-    </nav>
-  )
+class Nav extends Component {
+
+  state = {
+    topics: []
+  }
+
+  render() {
+    return (
+      <nav>
+        <Link to="/" className="link">Home</Link>
+        {this.state.topics.map(topic => {
+          return <Link to={`/topics/${topic.slug}/articles`} className="link">{topic.title}</Link>
+        })}
+      </nav>
+    )
+  }
+
+  componentDidMount() {
+    this.getTopics();
+  }
+
+  getTopics = () => {
+    api.getTopics()
+      .then(topics => {
+        this.setState({
+          topics
+        });
+      });
+  };
 }
 
 export default Nav
