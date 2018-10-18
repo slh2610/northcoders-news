@@ -27,9 +27,9 @@ class Articles extends Component {
               <p className="articleBody">{article.body}</p>
               <div className="otherArticleInfo">
                 <img src={article.created_by.avatar_url} alt="user avatar"></img>
-                <p>{article.created_by.username}</p>
-                <p>Comments: {article.comment_count}</p>
-                <p>Votes: {article.votes}</p>
+                <p className="articlesUsername">{article.created_by.username}</p>
+                <p className="articlesComments">Comments: {article.comment_count}</p>
+                <p className="articlesVotes">Votes: {article.votes}</p>
               </div>
             </div>
           })}

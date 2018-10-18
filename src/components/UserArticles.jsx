@@ -31,7 +31,7 @@ const UserArticles = ({ articles, setSelectedUser }) => {
 
   return (
     <div class="bar">
-      <h2>Most Active Users</h2>
+      <h2>User Rankings</h2>
       <Bar
         data={data}
         // width={20}

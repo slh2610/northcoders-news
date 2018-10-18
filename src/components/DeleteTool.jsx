@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const DeleteTool = ({ id, deleteComment }) => {
   return (
-    < button class="deleteComment" onClick={() => deleteComment(id)} >
-      <span role="img" aria-label="wastebasket emoji">🗑️</span>
+    < button class="deleteButton" onClick={() => deleteComment(id)} >
+      <span class="deleteComment" role="img" aria-label="wastebasket emoji">🗑️</span>
     </button >
   )
 }

@@ -2,7 +2,7 @@
   text-align: center;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1.25fr 4fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 0.6fr 6fr 0.5fr;
   grid-template-areas:
   'login header'
@@ -12,16 +12,19 @@
 }
 
 header {
-  border: 1px solid black;
+  border: 1px solid grey;
   background-color:#56b3a3;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  text-align: center;
   color: white;
   grid-area: header
 }
 
 .loginComponent {
   border: 1px solid grey;
-  background-color: aquamarine;
   padding: 10px;
+  color: white;
   grid-area: login
 }
 

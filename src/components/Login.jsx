@@ -14,12 +14,15 @@ class Login extends Component {
     return (
       !this.props.loggedIn ?
         <form onSubmit={this.handleSubmit} className="loginComponent">
+
           <label>Username: </label>
-          <input type="text" value={this.state.username} name="username" onChange={this.handleChange}></input>
+          <input className="loginInput" type="text" value={this.state.username} name="username" onChange={this.handleChange}></input>
           <br></br>
+
           <label>Password: </label>
-          <input type="password" value={this.state.password} name="password" onChange={this.handleChange}></input>
+          <input className="loginInput" type="password" value={this.state.password} name="password" onChange={this.handleChange}></input>
           <br></br>
+
           <button className="loginButton">Login</button>
         </form >
         : <div className="loginComponent">

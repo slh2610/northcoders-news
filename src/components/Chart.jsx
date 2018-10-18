@@ -52,7 +52,7 @@ const Chart = ({ articles }) => {
 
   return (
     < div className="chart" >
-      <h2>Most Popular Articles</h2>
+      <h2>Popular Articles</h2>
       <Pie data={data} />
     </div >
   )

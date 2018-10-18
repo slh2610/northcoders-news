@@ -4,6 +4,7 @@ import VotingTool from './VotingTool';
 import CommentAdder from './CommentAdder';
 import DeleteTool from './DeleteTool';
 import dayjs from 'dayjs';
+import './Comments.css'
 import * as api from '../api';
 
 class Comments extends Component {
@@ -24,12 +25,17 @@ class Comments extends Component {
           <ul>
             {this.state.comments.map(comment => {
               const { _id, body, created_at, votes, created_by } = comment
+
               return <div key={_id}>
-                <li >{body}</li>
-                <p>{dayjs(created_at).format('MMMM D YYYY, h:mm:ss a')}</p>
-                <p><img src={created_by.avatar_url} alt="user avatar"></img>{created_by.username}</p>
-                <VotingTool votes={votes} id={_id} itemType="comment" />
-                {comment.created_by._id === this.props.user._id && <DeleteTool id={comment._id} deleteComment={this.deleteComment} />}
+                <li className="commentBody">{body}</li>
+                <p className="date">{dayjs(created_at).format('MMMM D YYYY, h:mm:ss a')}</p>
+
+                <div className="commentInfo">
+                  <p><img src={created_by.avatar_url} alt="user avatar"></img>{created_by.username}</p>
+                  <VotingTool votes={votes} id={_id} itemType="comment" />
+                  {comment.created_by._id === this.props.user._id && <DeleteTool id={comment._id} deleteComment={this.deleteComment} />}
+                </div>
+
               </div>
             })}
           </ul>

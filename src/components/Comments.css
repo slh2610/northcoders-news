@@ -1,9 +1,28 @@
-.allComments {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 2fr 6fr;
-  grid-template-areas: 
-  "commentAdder"
-  "articleComments"
+ul {
+  list-style: none;
 }
 
+.commentBody {
+  border-top: 0.1px solid grey;
+  padding: 2%;
+}
+
+.commentInfo {
+  width: 100%;
+  font-size: 14px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.deleteButton {
+  height: 10%;
+  margin-left: 20%;
+  border-radius: 10px;
+}
+
+.deleteComment {
+  font-size: 35px;
+}

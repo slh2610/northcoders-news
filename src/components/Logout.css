@@ -1,0 +1,9 @@
+.logoutButton {
+  background-color: powderblue;
+  border: 0.5px solid grey;
+  width: 22%;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  padding: 3%
+}

@@ -1,10 +1,11 @@
 import React from 'react';
+import './Logout.css'
 import PropTypes from 'prop-types';
 
 const Logout = ({ logout }) => {
   return (
     <form onSubmit={logout}>
-      <button>Logout</button>
+      <button className="logoutButton">Logout</button>
     </form>
   )
 }
