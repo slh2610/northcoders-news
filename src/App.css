@@ -13,7 +13,7 @@
 
 header {
   border: 1px solid black;
-  background-color: blue;
+  background-color:#56b3a3;
   color: white;
   grid-area: header
 }

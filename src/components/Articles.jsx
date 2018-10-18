@@ -25,9 +25,11 @@ class Articles extends Component {
                 <h2 className="articleTitle">{article.title}</h2>
               </Link>
               <p className="articleBody">{article.body}</p>
-              <div className="userInfo">
+              <div className="otherArticleInfo">
                 <img src={article.created_by.avatar_url} alt="user avatar"></img>
                 <p>{article.created_by.username}</p>
+                <p>Comments: {article.comment_count}</p>
+                <p>Votes: {article.votes}</p>
               </div>
             </div>
           })}

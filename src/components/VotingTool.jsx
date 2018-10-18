@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './VotingTool.css'
 import * as api from '../api.js'
 
 class VotingTool extends Component {
@@ -13,9 +14,9 @@ class VotingTool extends Component {
 
     return (
       <div className="vote">
-        <button onClick={() => this.modifyVotes("up")} disabled={voteModifier === 1}>Up</button>
+        <button className="voteButton" onClick={() => this.modifyVotes("up")} disabled={voteModifier === 1}><span role="img" aria-label="up arrow">⬆️</span></button>
         <p>{votes + this.state.voteModifier}</p>
-        <button onClick={() => this.modifyVotes("down")} disabled={voteModifier === -1}>Down</button>
+        <button className="voteButton" onClick={() => this.modifyVotes("down")} disabled={voteModifier === -1}><span role="img" aria-label="down arrow">⬇</span>️</button>
       </div>
     )
   }

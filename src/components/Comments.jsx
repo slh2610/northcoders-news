@@ -19,7 +19,7 @@ class Comments extends Component {
           <CommentAdder user={this.props.user} articleId={this.props.articleId} addComments={this.addComments} />
         </div>
         :
-        <div>
+        <div className="comments">
           <CommentAdder user={this.props.user} articleId={this.props.articleId} addComments={this.addComments} />
           <ul>
             {this.state.comments.map(comment => {

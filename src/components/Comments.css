@@ -1,0 +1,9 @@
+.allComments {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 6fr;
+  grid-template-areas: 
+  "commentAdder"
+  "articleComments"
+}
+

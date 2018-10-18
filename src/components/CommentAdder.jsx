@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CommentAdder.css';
 import PropTypes from 'prop-types';
 
 class CommentAdder extends Component {
@@ -7,10 +8,10 @@ class CommentAdder extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Enter comment here" onChange={this.handleChange} value={this.state.commentText}></input>
+      <form onSubmit={this.handleSubmit} className="commentAdd">
+        <input className="commentInput" type="text" placeholder="Enter comment here" onChange={this.handleChange} value={this.state.commentText}></input>
         <br></br>
-        <button>Submit</button>
+        <button className="commentButton">Submit</button>
       </form>
     )
   }

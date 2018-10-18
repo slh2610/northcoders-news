@@ -28,8 +28,10 @@
 }
 
 .article {
-  width: 85%;
-  margin-left: 7.5%
+  border-right: 0.5px solid;
+  border-left: 0.5px solid;
+  width: 80%;
+  margin-left: 10%
 }
 
 img {
@@ -39,17 +41,18 @@ img {
 
 .articleTitle {
   text-decoration-line: none;
+  border-top: 0.5px solid;
   margin-bottom: 1%;
-  border: 0.5px solid black;
+  padding-top: 2%;
   border-bottom: none;
   font-size: 20px;
   color: grey;
 }
 
 .articleBody {
-  height: 85px;
-  font-size: 14px;
-  border: 0.5px solid;
+  height: 50px;
+  color: darkblue;
+  font-size: 12px;
   overflow: hidden;
   margin-top: 0%;
   margin-bottom: 3%;
@@ -57,11 +60,12 @@ img {
   padding: 10px;
 }
 
-.userInfo {
+.otherArticleInfo {
   width: 100%;
+  font-size: 14px;
   display: inline-flex;
-  border: 0.5px solid black;
-  border-right: 0px;
+  border-bottom: 0.5px solid;
+  border-top: 0.5px solid;
 }
 
 .pie {

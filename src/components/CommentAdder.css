@@ -1,0 +1,19 @@
+.commentAdd {
+  width: 100%
+}
+
+.commentInput {
+  width: 90%;
+  border-radius: none;
+  background-color: antiquewhite;
+  height: 100px;
+}
+
+.commentButton {
+  border-radius: 10px;
+  background-color: lightseagreen;
+  padding: 1%;
+  color: white;
+  font-weight: bold
+}
+

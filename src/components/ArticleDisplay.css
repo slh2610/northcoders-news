@@ -1,3 +1,74 @@
+.articleDisplay {
+  width: 70%;
+  height: 200vh;
+  margin-left: 15%;
+  margin-top: 3%;
+  border: 0.5px solid;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  "singleArticle singleArticle singleArticle"
+  "user votes commentCount"
+  "comments comments comments"
+}
+
+.singleArticle {
+  border: 0.5px solid;
+  grid-area: singleArticle
+}
+
+.user {
+  display: inline-flex;
+  padding-left: 15%;
+  grid-area: user;
+}
+
+.articleImg {
+  padding: 5%;
+  width: 12%;
+  height: 35%
+}
+
+.votes {
+  border: 2px solid;
+  display: inline-flex;
+  grid-area: votes
+}
+
+.commentCount {
+  border: 2px solid;
+  grid-area: commentCount
+}
+
+.comments {
+  border: 0.5px solid;
+  overflow: scroll;
+  grid-area: comments
+}
+
+.title {
+ color: darkgrey;
+ padding: 2%
+}
+
+.body {
+  font-size: 14px;
+  text-align: justify;
+  padding-left: 5%;
+  padding-right: 5%;
+}  
+
+.date {
+  text-align: left;
+  color: grey;
+  font-size: 12px;
+  padding-left: 5%;
+  padding-bottom: 2%;
+  border-bottom: 0.5px solid
+}
+
+
 .userVotesComments {
-  display: inline-block;
+  display: inline-flex;
 }
