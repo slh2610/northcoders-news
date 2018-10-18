@@ -5,17 +5,18 @@
 .commentInput {
   width: 90%;
   border-radius: none;
-  background-color: #D3FDD8;
   margin-top: 2%;
   height: 100px;
+  box-shadow: 4px 4px 20px #D3FDD8;
 }
 
 .commentButton {
   border-radius: 10px;
-  background-color: lightseagreen;
+  background-color: darkcyan;
   margin-top: 1%;
   padding: 1%;
   color: white;
   font-weight: bold
 }
+
 

@@ -1,7 +1,7 @@
 .articleDisplay {
-  width: 70%;
-  height: 200vh;
-  margin-left: 15%;
+  width: 60%;
+  height: 100vh;
+  margin-left: 20%;
   margin-top: 3%;
   border: 0.5px solid grey;
   display: grid;
@@ -43,6 +43,8 @@
 
 .comments {
   border: 0.5px solid grey;
+  width: 100%;
+  margin-right: 2%;
   overflow: scroll;
   grid-area: comments
 }
@@ -66,9 +68,4 @@
   padding-left: 5%;
   padding-bottom: 2%;
   border-bottom: 0.5px solid
-}
-
-
-.userVotesComments {
-  display: inline-flex;
 }

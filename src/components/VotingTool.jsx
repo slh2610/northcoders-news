@@ -32,7 +32,7 @@ class VotingTool extends Component {
 
 VotingTool.propTypes = {
   votes: PropTypes.number.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   itemType: PropTypes.string.isRequired
 }
 

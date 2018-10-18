@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ArticleDisplay.css';
 import VotingTool from './VotingTool';
+import { navigate } from '@reach/router';
 import Comments from './Comments';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
@@ -8,7 +9,7 @@ import * as api from '../api';
 
 class ArticleDisplay extends Component {
   state = {
-    article: {}
+    article: {},
   }
 
   render() {
@@ -48,6 +49,16 @@ class ArticleDisplay extends Component {
         this.setState({
           article
         })
+      })
+      .catch(err => {
+        navigate('/error', {
+          replace: true,
+          state: {
+            code: err.code,
+            message: err.message,
+            from: '/articles'
+          }
+        });
       })
   }
 

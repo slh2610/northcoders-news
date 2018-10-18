@@ -5,9 +5,7 @@ import './Articles.css'
 const UserArticles = ({ articles, setSelectedUser }) => {
 
   const users = articles.map(user => {
-    if (user.created_by !== null) {
-      return user.created_by.username
-    }
+    return user.created_by.username
   })
 
   const userData = users.filter(name => name !== undefined).reduce((acc, user) => {
@@ -30,7 +28,7 @@ const UserArticles = ({ articles, setSelectedUser }) => {
   };
 
   return (
-    <div class="bar">
+    <div className="bar">
       <h2>User Rankings</h2>
       <Bar
         data={data}

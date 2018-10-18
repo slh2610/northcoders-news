@@ -9,7 +9,7 @@ class CommentAdder extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="commentAdd">
-        <input className="commentInput" type="text" placeholder="Enter comment here" onChange={this.handleChange} value={this.state.commentText}></input>
+        <textarea className="commentInput" type="text" placeholder="Enter comment here" onChange={this.handleChange} value={this.state.commentText} required></textarea>
         <br></br>
         <button className="commentButton">Submit</button>
       </form>

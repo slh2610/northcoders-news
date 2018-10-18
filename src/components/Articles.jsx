@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from '@reach/router';
+import { navigate, Link } from '@reach/router';
 import Chart from './Chart';
 import UserArticles from './UserArticles';
 import PropTypes from 'prop-types';
@@ -9,14 +9,16 @@ import ArticleAdder from './ArticleAdder';
 
 class Articles extends Component {
   state = {
-    articles: []
+    articles: [],
+    err: null
   }
 
   render() {
     return (
-      <main className="allArticles">
+      <main className="allArticles">  e
         <Chart articles={this.state.articles} className="chart" />
         <UserArticles articles={this.state.articles} className="barChart" />
+
         <div className="display">
           {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
           {this.state.articles.map(article => {
@@ -25,12 +27,14 @@ class Articles extends Component {
                 <h2 className="articleTitle">{article.title}</h2>
               </Link>
               <p className="articleBody">{article.body}</p>
+
               <div className="otherArticleInfo">
                 <img src={article.created_by.avatar_url} alt="user avatar"></img>
                 <p className="articlesUsername">{article.created_by.username}</p>
                 <p className="articlesComments">Comments: {article.comment_count}</p>
                 <p className="articlesVotes">Votes: {article.votes}</p>
               </div>
+
             </div>
           })}
         </div>
@@ -48,7 +52,16 @@ class Articles extends Component {
         this.setState({
           articles
         });
-      });
+      })
+      .catch(err => {
+        navigate('/error', {
+          replace: true,
+          state: {
+            code: err.code,
+            message: err.message,
+          }
+        });
+      })
   };
 
   getArticlesByTopic = () => {
@@ -58,6 +71,15 @@ class Articles extends Component {
           this.setState({
             articles
           })
+        })
+        .catch(err => {
+          navigate('/error', {
+            replace: true,
+            state: {
+              code: err.code,
+              message: err.message,
+            }
+          });
         })
     } else {
       this.fetchArticles()
@@ -81,6 +103,7 @@ class Articles extends Component {
 }
 
 Articles.propTypes = {
+  user: PropTypes.object.isRequired,
   loggedIn: PropTypes.bool.isRequired
 }
 

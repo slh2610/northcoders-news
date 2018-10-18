@@ -1,5 +1,5 @@
 .allArticles {
-  border: 0.5px solid grey;
+  border: 0.5px solid lightgrey;
   height: 100vh;
   display: grid;
   grid-template-columns: 2fr 4fr;
@@ -10,14 +10,14 @@
 }
 
 .display {
-  border: 0.5px solid grey;
+  border: 0.5px solid lightgrey;
   width: 100%;
   overflow: scroll;
   grid-area: display
 }
 
  .chart {
-  border: 0.5px solid;
+  border-bottom: 0.5px solid lightgrey;
   color: grey;
   grid-area: chart
 }
@@ -29,10 +29,12 @@
 }
 
 .article {
-  border-right: 0.5px solid grey;
-  border-left: 0.5px solid grey;
+  box-shadow: 8px 8px 8px 0px rgba(155,171,173,0.57);
+  /* border-right: 0.5px solid grey;
+  border-left: 0.5px solid grey; */
   width: 80%;
-  margin-left: 10%
+  margin-left: 10%;
+  margin-bottom: 5%
 }
 
 img {
@@ -42,7 +44,6 @@ img {
 
 .articleTitle {
   text-decoration-line: none;
-  border-top: 0.5px solid;
   margin-bottom: 1%;
   padding-top: 2%;
   border-bottom: none;
@@ -65,12 +66,11 @@ img {
   width: 100%;
   font-size: 14px;
   display: flex;
-  color: darkblue;
+  color: lightslategrey;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
-  border-bottom: 0.5px solid grey;
   border-top: 0.5px solid grey;
 }
 

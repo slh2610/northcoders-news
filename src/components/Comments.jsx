@@ -15,7 +15,7 @@ class Comments extends Component {
   render() {
     return (
       this.props.commentCount === 0 ?
-        <div>
+        <div className="comments">
           <p>Be the first to add a comment</p>
           <CommentAdder user={this.props.user} articleId={this.props.articleId} addComments={this.addComments} />
         </div>
@@ -76,7 +76,6 @@ class Comments extends Component {
   }
 
 }
-
 
 Comments.propTypes = {
   articleId: PropTypes.string.isRequired,

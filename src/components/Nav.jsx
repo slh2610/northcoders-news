@@ -14,7 +14,7 @@ class Nav extends Component {
       <nav>
         <Link to="/" className="link">Home</Link>
         {this.state.topics.map(topic => {
-          return <Link to={`/topics/${topic.slug}/articles`} className="link">{topic.title}</Link>
+          return <Link key={topic._id} to={`/topics/${topic.slug}/articles`} className="link">{topic.title}</Link>
         })}
       </nav>
     )

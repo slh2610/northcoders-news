@@ -12,8 +12,7 @@
 }
 
 header {
-  border: 1px solid grey;
-  background-color:#56b3a3;
+  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(55, 174, 174));
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   text-align: center;
@@ -30,7 +29,7 @@ header {
 
 nav {
   border: 1px solid grey;
-  background-color: #A9CCE3
+  background-color:#2D4F70
 }
 
 .articles {
