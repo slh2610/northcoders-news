@@ -6,17 +6,18 @@ import './Login.css'
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   }
 
   render() {
     const { username, avatar_url } = this.props.user
+    console.log(this.props)
     return (
       !this.props.loggedIn ?
         <form onSubmit={this.handleSubmit} className="loginComponent">
 
           <label>Username: </label>
-          <input className="loginInput" type="text" value={this.state.username} name="username" onChange={this.handleChange}></input>
+          <input className="loginInput" type="text" value={this.state.username} name="username" onChange={this.handleChange} required></input>
           <br></br>
 
           <label>Password: </label>
@@ -25,10 +26,16 @@ class Login extends Component {
 
           <button className="loginButton">Login</button>
         </form >
-        : <div className="loginComponent">
-          <p>Logged in as: <br></br><img src={avatar_url} alt="user avatar" className="login-img"></img>  {username}</p>
-          <Logout logout={this.props.logout} />
+        : this.props.err ? <div className="loginComponent">
+          <p>{this.props.loggedIn}</p>
+          <button className="loginButton" onClick={this.props.backToLogin}>Try again</button>
         </div>
+          :
+
+          <div className="loginComponent">
+            <p>Logged in as: <br></br><img src={avatar_url} alt="user avatar" className="login-img"></img>  {username}</p>
+            <Logout logout={this.props.logout} />
+          </div>
     )
   }
 
@@ -51,8 +58,10 @@ class Login extends Component {
 
 Login.propTypes = {
   fetchUser: PropTypes.func.isRequired,
+  loggedIn: PropTypes.bool.isRequired,
   logout: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  backToLogin: PropTypes.func.isRequired
 }
 
 export default Login

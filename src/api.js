@@ -23,6 +23,9 @@ export const getArticleById = (id) => {
 
 export const postArticle = (topic, article) => {
   return axios.post(`${API_URL}/topics/${topic}/articles`, article)
+    .catch(() => {
+      return []
+    })
 
 }
 

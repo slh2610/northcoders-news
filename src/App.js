@@ -13,7 +13,8 @@ class App extends Component {
 
   state = {
     user: {},
-    loggedIn: false
+    loggedIn: false,
+    err: null
   }
 
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
       <div className="App">
         <header><h1>Northcoder's News</h1></header>
         <Nav user={this.state.user} />
-        <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} logout={this.logout} />
+        <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} err={this.state.err} logout={this.logout} backToLogin={this.backToLogin} />
 
         <Router className="articles">
           <Articles path="/" loggedIn={this.state.loggedIn} user={this.state.user} />
@@ -36,22 +37,28 @@ class App extends Component {
     );
   }
 
-  componentDidMount() {
-    const user = sessionStorage.getItem('username');
-    if (user) {
-      this.setState({ user: JSON.parse(user) });
-    }
-  }
-
   fetchUser = (username) => {
     api.getUserByUsername(username)
       .then(data => {
-        sessionStorage.setItem(username, data.username)
         this.setState({
           user: data,
           loggedIn: true
         })
       })
+      .catch(err => {
+        this.setState({
+          loggedIn: "Invalid Username",
+          err: err
+        })
+      })
+
+  }
+
+  backToLogin = () => {
+    this.setState({
+      loggedIn: false,
+      err: null
+    })
   }
 
   logout = () => {

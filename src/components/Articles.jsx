@@ -14,8 +14,9 @@ class Articles extends Component {
   }
 
   render() {
+    if (!this.state.articles.length === 0) return <p>Loading...</p>
     return (
-      <main className="allArticles">  e
+      <main className="allArticles">
         <Chart articles={this.state.articles} className="chart" />
         <UserArticles articles={this.state.articles} className="barChart" />
 

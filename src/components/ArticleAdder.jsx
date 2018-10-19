@@ -7,7 +7,7 @@ class ArticleAdder extends Component {
     belongs_to: "",
     title: "",
     body: "",
-    articleToAdd: false
+    articleToAdd: false,
   }
 
   render() {
@@ -19,17 +19,15 @@ class ArticleAdder extends Component {
           <button onClick={this.clickToAddArticle} className="addArticleButton">Post new Article</button>
           :
           <form onSubmit={this.handleSubmit} className="addArticle">
-            <select onChange={this.handleChange} value={this.state.belongs_to} name="belongs_to">
+            <select onChange={this.handleChange} value={this.state.belongs_to} name="belongs_to" className="selectTool">
               <option>Please Choose a Topic</option>
               {topics.map(topic => {
                 return <option key={topic}>{topic}</option>
               })}
             </select> <br></br>
 
-            <label>Title</label>
-            <input className="addArticleTitle" type="text" name="title" value={this.state.title} onChange={this.handleChange} required></input><br></br>
-            <label>Body</label>
-            <textarea type="text" name="body" value={this.state.body} onChange={this.handleChange} required className="addArticleBody" ></textarea><br></br>
+            <input className="addArticleTitle" placeholder="Please add a title" type="text" name="title" value={this.state.title} onChange={this.handleChange} required></input><br></br>
+            <textarea className="addArticleBody" placeholder="Add article here" rows="5" type="text" name="body" value={this.state.body} onChange={this.handleChange} required ></textarea><br></br>
             <button className="addArticleButton">Submit</button>
           </form>
         }
