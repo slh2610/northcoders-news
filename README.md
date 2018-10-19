@@ -2,6 +2,11 @@
 
 Northcoders News is a social news aggregation, web content rating, and discussion website. 
 
+##URL
+The site can be accessed on the following URL:
+
+https://5bc9c74d82d3f16f57a8357d--northcoder-s-news.netlify.com/
+
 ##API
 
 The website fetches data from the following API: 
