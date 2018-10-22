@@ -3,6 +3,7 @@ import { Router } from '@reach/router';
 import * as api from './api';
 import Nav from './components/Nav';
 import ErrorPage from './components/ErrorPage';
+import UsersPage from './components/UsersPage'
 import Articles from './components/Articles';
 import ArticleDisplay from './components/ArticleDisplay';
 import Footer from './components/Footer';
@@ -21,13 +22,14 @@ class App extends Component {
     return (
       <div className="App">
         <header><h1>Northcoder's News</h1></header>
-        <Nav user={this.state.user} />
+        <Nav username={this.state.user.username} />
         <Login fetchUser={this.fetchUser} user={this.state.user} loggedIn={this.state.loggedIn} err={this.state.err} logout={this.logout} backToLogin={this.backToLogin} />
 
         <Router className="articles">
           <Articles path="/" loggedIn={this.state.loggedIn} user={this.state.user} />
           <Articles path="/topics/:topic/articles" loggedIn={this.state.loggedIn} user={this.state.user} />
           <ArticleDisplay path="articles/:articleId" user={this.state.user} loggedIn={this.state.loggedIn} />
+          <UsersPage path="users/:username" user={this.state.user} />
           <ErrorPage path="/error" />
           <ErrorPage default />
         </Router>

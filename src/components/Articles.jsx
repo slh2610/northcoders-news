@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { navigate, Link } from '@reach/router';
 import Chart from './Chart';
 import UserArticles from './UserArticles';
+import Table from './Table';
 import PropTypes from 'prop-types';
 import * as api from '../api';
 import './Articles.css'
@@ -10,6 +11,7 @@ import ArticleAdder from './ArticleAdder';
 class Articles extends Component {
   state = {
     articles: [],
+    selectedUser: "",
     err: null
   }
 
@@ -18,7 +20,8 @@ class Articles extends Component {
     return (
       <main className="allArticles">
         <Chart articles={this.state.articles} className="chart" />
-        <UserArticles articles={this.state.articles} className="barChart" />
+        {!this.state.selectedUser && <UserArticles articles={this.state.articles} setSelectedUser={this.setSelectedUser} className="barChart" />}
+        {this.state.selectedUser && <Table articles={this.state.articles} selectedUser={this.state.selectedUser} backToChart={this.backToChart} />}
 
         <div className="display">
           {this.props.loggedIn && <ArticleAdder addArticle={this.addArticle} user={this.props.user} />}
@@ -100,6 +103,19 @@ class Articles extends Component {
           articles: [article, ...this.state.articles]
         })
       })
+  }
+
+  setSelectedUser = (_, clickedItem) => {
+    const selectedUser = clickedItem[0]._model.label
+    this.setState({
+      selectedUser: selectedUser
+    })
+  }
+
+  backToChart = () => {
+    this.setState({
+      selectedUser: ""
+    })
   }
 }
 

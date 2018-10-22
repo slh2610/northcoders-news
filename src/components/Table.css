@@ -1,0 +1,28 @@
+.userHeading {
+  color: #4DB6AC; 
+}
+
+table {
+  border: 0.5px solid grey;
+  padding-top: 3%;
+  padding-bottom: 3%
+}
+
+.tableHeading {
+  color: #4DB6AC; 
+  padding-bottom: 2%;
+}
+
+.tableBody {
+  color: #848A84;
+  font-size: 18px;
+}
+
+.tableButton {
+  margin-top: 2%;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #4DB6AC;
+  border-radius: 10px;
+  padding: 2%;
+}

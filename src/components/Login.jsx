@@ -11,7 +11,6 @@ class Login extends Component {
 
   render() {
     const { username, avatar_url } = this.props.user
-    console.log(this.props)
     return (
       !this.props.loggedIn ?
         <form onSubmit={this.handleSubmit} className="loginComponent">
@@ -27,7 +26,7 @@ class Login extends Component {
           <button className="loginButton">Login</button>
         </form >
         : this.props.err ? <div className="loginComponent">
-          <p>{this.props.loggedIn}</p>
+          <p>Invalid username</p>
           <button className="loginButton" onClick={this.props.backToLogin}>Try again</button>
         </div>
           :
