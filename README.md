@@ -6,7 +6,7 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 The site is deployed through Netlify and can be accesses at:
 
-https://5bc9c74d82d3f16f57a8357d--northcoder-s-news.netlify.com/
+https://5bdf3f6efdd72a27380d60fd--northcoder-s-news.netlify.com/
 
 It can also be viewed through Github:
 
