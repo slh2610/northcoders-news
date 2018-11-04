@@ -1,46 +1,84 @@
-.App {
-  text-align: center;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 0.6fr 6fr 0.5fr;
-  grid-template-areas:
-  'login header'
-  'login nav'
-  'main main' 
-  'footer footer'
+@media screen and (min-width: 601px) {
+  .App {
+    text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 0.6fr 6fr 0.5fr;
+    grid-template-areas:
+      'login header'
+      'login nav'
+      'main main'
+      'footer footer';
+  }
+
+  header {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgb(55, 174, 174)
+    );
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    grid-area: header;
+  }
+
+  .loginComponent {
+    border: 1px solid grey;
+    padding: 10px;
+    color: white;
+    grid-area: login;
+  }
+
+  nav {
+    border: 1px solid grey;
+    background-color: #2d4f70;
+  }
+
+  .articles {
+    width: 100%;
+    height: 100%;
+    grid-area: main;
+  }
+
+  footer {
+    background-color: white;
+    grid-area: footer;
+  }
 }
 
-header {
-  background-image: linear-gradient(to right, rgba(255,0,0,0),rgb(55, 174, 174));
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-  grid-area: header
+@media screen and (max-width: 600px) {
+  .App {
+    text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.6fr 0.6fr 6fr 0.5fr;
+    grid-template-areas:
+      'header'
+      'nav'
+      'login'
+      'main'
+      'footer';
+  }
+
+  header {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgb(55, 174, 174)
+    );
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    grid-area: header;
+  }
+
+  nav {
+    border: 1px solid grey;
+    background-color: #2d4f70;
+  }
 }
-
-.loginComponent {
-  border: 1px solid grey;
-  padding: 10px;
-  color: white;
-  grid-area: login
-}
-
-nav {
-  border: 1px solid grey;
-  background-color:#2D4F70
-}
-
-.articles {
-  width: 100%;
-  height: 100%;
-  grid-area: main
-}
-
-footer {
-  background-color: white;
-  grid-area: footer
-}
-
-

@@ -1,86 +1,178 @@
-.allArticles {
-  background-color: white;
-  border: 0.5px solid lightgrey;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 2fr 4fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  "chart display"
-  "bar display"
+@media screen and (min-width: 601px) {
+  .allArticles {
+    background-color: white;
+    border: 0.5px solid lightgrey;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'chart display'
+      'bar display';
+  }
+
+  .display {
+    border: 0.5px solid lightgrey;
+    width: 100%;
+    overflow: scroll;
+    grid-area: display;
+  }
+
+  .chart {
+    border-bottom: 0.5px solid lightgrey;
+    color: grey;
+    grid-area: chart;
+  }
+
+  .bar {
+    height: 80%;
+    color: grey;
+    grid-area: bar;
+  }
+
+  .article {
+    box-shadow: 8px 8px 8px 0px rgba(155, 171, 173, 0.57);
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+  }
+
+  img {
+    height: 2%;
+    width: 5%;
+  }
+
+  .articleTitle {
+    margin-bottom: 1%;
+    padding-top: 2%;
+    border-bottom: none;
+    font-size: 20px;
+    color: #4db6ac;
+  }
+
+  .articleBody {
+    height: 50px;
+    color: #848a84;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    text-align: justify;
+    padding: 10px;
+  }
+
+  .otherArticleInfo {
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-top: 0.5px solid grey;
+  }
+
+  .articlesUsername {
+    margin-right: 22%;
+  }
+
+  .articlesComments {
+    margin-right: 22%;
+  }
+
+  .pie {
+    height: 200px;
+    width: 200px;
+  }
 }
 
-.display {
-  border: 0.5px solid lightgrey;
-  width: 100%;
-  overflow: scroll;
-  grid-area: display
-}
+@media screen and (max-width: 600px) {
+  .allArticles {
+    background-color: white;
+    border: 0.5px solid lightgrey;
+    height: 200vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10fr 1fr 1fr;
+    grid-template-areas:
+      'display'
+      'chart'
+      'bar';
+  }
 
- .chart {
-  border-bottom: 0.5px solid lightgrey;
-  color: grey;
-  grid-area: chart
-}
+  .display {
+    border: 0.5px solid lightgrey;
+    width: 100%;
+    overflow: scroll;
+    grid-area: display;
+  }
 
-.bar {
-  height: 80%;
-  color: grey;
-  grid-area: bar
-}
+  .chart {
+    border-bottom: 0.5px solid lightgrey;
+    color: grey;
+    grid-area: chart;
+  }
 
-.article {
-  box-shadow: 8px 8px 8px 0px rgba(155,171,173,0.57);
-  width: 70%;
-  margin-left: 15%;
-  margin-bottom: 5%
-}
+  .bar {
+    height: 80%;
+    color: grey;
+    grid-area: bar;
+  }
 
-img {
-  height: 2%;
-  width: 5%
-}
+  .article {
+    box-shadow: 8px 8px 8px 0px rgba(155, 171, 173, 0.57);
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
 
-.articleTitle {
-  margin-bottom: 1%;
-  padding-top: 2%;
-  border-bottom: none;
-  font-size: 20px;
-  color: #4DB6AC  
-}
+  img {
+    height: 2%;
+    width: 5%;
+  }
 
-.articleBody {
-  height: 50px;
-  color: #848A84;
-  font-size: 14px;
-  overflow: hidden;
-  margin-top: 0%;
-  margin-bottom: 3%;
-  text-align: justify;
-  padding: 10px;
-}
+  .articleTitle {
+    margin-bottom: 1%;
+    padding-top: 2%;
+    border-bottom: none;
+    font-size: 20px;
+    color: #4db6ac;
+  }
 
-.otherArticleInfo {
-  width: 100%;
-  font-size: 14px;
-  display: flex;
-  color: lightslategrey;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  border-top: 0.5px solid grey;
-}
+  .articleBody {
+    height: 50px;
+    color: #848a84;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    text-align: justify;
+    padding: 10px;
+  }
 
-.articlesUsername {
-  margin-right: 22%
-}
+  .otherArticleInfo {
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-top: 0.5px solid grey;
+  }
 
-.articlesComments {
-  margin-right: 22%;
-}
+  .articlesUsername {
+    margin-right: 22%;
+  }
 
-.pie {
-  height: 300px;
-  width: 300px
+  .articlesComments {
+    margin-right: 22%;
+  }
+
+  .pie {
+    height: 200px;
+    width: 200px;
+  }
 }

@@ -1,49 +1,97 @@
-.addArticle {
-  box-shadow: 15px 13px 14px 0px rgba(155,171,173,0.57);
-  width: 70%;
-  margin: 5% 15% 10% 15%;
+@media screen and (min-width: 601px) {
+  .addArticle {
+    box-shadow: 15px 13px 14px 0px rgba(155, 171, 173, 0.57);
+    width: 70%;
+    margin: 5% 15% 10% 15%;
+  }
 
+  .addArticleButton {
+    width: 12%;
+    border-radius: 10px;
+    color: white;
+    background-color: lightblue;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    font-size: 16px;
+  }
+
+  .addArticleTitle {
+    margin: 2%;
+    font-size: 16px;
+    border-radius: 10px;
+    color: grey;
+    width: 70%;
+    padding: 1%;
+  }
+
+  .addArticleBody {
+    margin: 2%;
+    border-radius: 10px;
+    color: grey;
+    font-size: 16px;
+    width: 70%;
+    padding: 1%;
+  }
+
+  .selectTool {
+    background: rgb(55, 174, 174);
+    border: none;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    height: 29px;
+    padding: 5px;
+    width: 268px;
+  }
 }
 
-.addArticleButton {
-  width: 12%;
-  border-radius: 10px;
-  color: white;
-  background-color: lightblue;
-  font-weight: bold;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding: 1%;
-  font-size: 16px
-  
-}
+@media screen and (max-width: 600px) {
+  .addArticle {
+    box-shadow: 15px 13px 14px 0px rgba(155, 171, 173, 0.57);
+    width: 95%;
+    margin: 5% 2.5% 10% 2.5%;
+  }
 
-.addArticleTitle {
-  margin: 2%;
-  font-size: 16px;
-  border-radius: 10px;
-  color: grey;
-  width: 70%;
-  padding: 1%
+  .addArticleButton {
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    background-color: lightblue;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    font-size: 16px;
+  }
 
-}
+  .addArticleTitle {
+    margin: 2%;
+    font-size: 16px;
+    border-radius: 10px;
+    color: grey;
+    width: 70%;
+    padding: 1%;
+  }
 
-.addArticleBody {
-  margin: 2%;
-  border-radius: 10px;
-  color: grey;
-  font-size: 16px;
-  width: 70%;
-  padding: 1%
-}
+  .addArticleBody {
+    margin: 2%;
+    border-radius: 10px;
+    color: grey;
+    font-size: 16px;
+    width: 70%;
+    padding: 1%;
+  }
 
-.selectTool {
-  background: rgb(55, 174, 174);
-   border: none;
-   font-size: 14px;
-   color: white;
-   font-weight: bold;
-   height: 29px;
-   padding: 5px;
-   width: 268px;
+  .selectTool {
+    background: rgb(55, 174, 174);
+    border: none;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    height: 29px;
+    padding: 5px;
+    width: 268px;
+  }
 }

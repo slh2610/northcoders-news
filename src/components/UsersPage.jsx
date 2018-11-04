@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react';
+import './UsersPage.css';
 
 const UsersPage = ({ user }) => {
-
-  if (!user) return <p>Loading....</p>
+  if (!user) return <p>Loading....</p>;
 
   return (
-    <div>
-      <h2>{user.username}</h2>
-      <p>ID: {user._id}</p>
-      <p>Name: {user.name}</p>
-      <p>Avatar: <img src={user.avatar_url} alt="user avatar"></img></p>
+    <div className="userPage">
+      <h2 className="userPageTite">{user.username}</h2>
+      <p className="userPageId">ID: {user._id}</p>
+      <p className="userPageName">{user.name}</p>
+      <p>
+        <img src={user.avatar_url} alt="user avatar" />
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default UsersPage
+export default UsersPage;

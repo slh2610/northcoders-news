@@ -1,69 +1,135 @@
-.articleDisplay {
-  box-shadow: 15px 13px 14px 0px rgba(155,171,173,0.57);
-  margin: 3% 25% 10% 25%;
-  width: 50%;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-  "singleArticle singleArticle singleArticle"
-  "user votes commentCount"
-  "comments comments comments"
+@media screen and (min-width: 601px) {
+  .articleDisplay {
+    box-shadow: 15px 13px 14px 0px rgba(155, 171, 173, 0.57);
+    margin: 3% 25% 10% 25%;
+    width: 60%;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'singleArticle singleArticle singleArticle'
+      'user votes commentCount'
+      'comments comments comments';
+  }
+
+  .singleArticle {
+    border-bottom: 0.5px solid lightgray;
+    grid-area: singleArticle;
+  }
+
+  .user {
+    display: inline-flex;
+    padding-left: 15%;
+    grid-area: user;
+  }
+
+  .articleImg {
+    padding: 5%;
+    width: 12%;
+    height: 35%;
+  }
+
+  .votes {
+    border: 2px solid;
+    display: inline-flex;
+    grid-area: votes;
+  }
+
+  .commentCount {
+    grid-area: commentCount;
+  }
+
+  .comments {
+    box-shadow: 15px 13px 14px 0px rgba(155, 171, 173, 0.57);
+    border-top: 0.5px solid lightgray;
+    width: 100%;
+    margin-right: 2%;
+    grid-area: comments;
+  }
+
+  .title {
+    font-size: 26px;
+    color: #4db6ac;
+    padding: 2%;
+  }
+
+  .body {
+    color: #848a84;
+    font-size: 16px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .date {
+    text-align: left;
+    color: grey;
+    font-size: 12px;
+    padding-left: 5%;
+    padding-bottom: 2%;
+  }
 }
 
-.singleArticle {
-  border-bottom: 0.5px solid lightgray;
-  grid-area: singleArticle
-}
+@media screen and (max-width: 600px) {
+  .articleDisplay {
+    width: 95%;
+  }
 
-.user {
-  display: inline-flex;
-  padding-left: 15%;
-  grid-area: user;
-}
+  .singleArticle {
+    border-bottom: 0.5px solid lightgray;
+    grid-area: singleArticle;
+    text-align: justify;
+  }
 
-.articleImg {
-  padding: 5%;
-  width: 12%;
-  height: 35%
-}
+  .user {
+    display: inline-flex;
+    padding-left: 15%;
+    grid-area: user;
+  }
 
-.votes {
-  border: 2px solid;
-  display: inline-flex;
-  grid-area: votes
-}
+  .articleImg {
+    padding: 5%;
+    width: 12%;
+    height: 35%;
+  }
 
-.commentCount {
-  grid-area: commentCount
-}
+  .votes {
+    border: 2px solid;
+    display: inline-flex;
+    grid-area: votes;
+  }
 
-.comments {
-  box-shadow: 15px 13px 14px 0px rgba(155,171,173,0.57);
-  border-top: 0.5px solid lightgray;
-  width: 100%;
-  margin-right: 2%;
-  grid-area: comments
-}
+  .commentCount {
+    grid-area: commentCount;
+  }
 
-.title {
- font-size: 26px;
- color: #4DB6AC;
- padding: 2%
-}
+  .comments {
+    box-shadow: 15px 13px 14px 0px rgba(155, 171, 173, 0.57);
+    border-top: 0.5px solid lightgray;
+    width: 100%;
+    margin-right: 2%;
+    grid-area: comments;
+  }
 
-.body {
-  color: #848A84;
-  font-size: 16px;
-  text-align: justify;
-  padding-left: 5%;
-  padding-right: 5%;
-}  
+  .title {
+    font-size: 26px;
+    color: #4db6ac;
+    padding: 2%;
+  }
 
-.date {
-  text-align: left;
-  color: grey;
-  font-size: 12px;
-  padding-left: 5%;
-  padding-bottom: 2%;
+  .body {
+    color: #848a84;
+    font-size: 16px;
+    text-align: justify;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .date {
+    text-align: left;
+    color: grey;
+    font-size: 12px;
+    padding-left: 5%;
+    padding-bottom: 2%;
+  }
 }
