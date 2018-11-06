@@ -5,7 +5,7 @@ import './Login.css';
 
 class Login extends Component {
   state = {
-    username: '',
+    username: 'jessjelly',
     password: ''
   };
 
@@ -61,7 +61,7 @@ class Login extends Component {
     event.preventDefault();
     this.props.fetchUser(this.state.username);
     this.setState({
-      username: '',
+      username: 'jessjelly',
       password: ''
     });
   };

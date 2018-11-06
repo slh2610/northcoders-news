@@ -12,8 +12,8 @@ import './App.css';
 
 class App extends Component {
   state = {
-    user: {},
-    loggedIn: false,
+    user: 'jessjelly',
+    loggedIn: true,
     err: null
   };
 
