@@ -6,7 +6,7 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 The site is deployed through Netlify and can be accessed at:
 
-https://5bdf3f6efdd72a27380d60fd--northcoder-s-news.netlify.com/
+https://5be15a0c3813f067dfdf3338--northcoder-s-news.netlify.com
 
 It can also be viewed through Github:
 
@@ -45,6 +45,8 @@ Users can view a list of articles on the homepage, as well as a list of articles
 Users must login to view or add articles, vote, view or add comments.
 
 ## Login
+
+In order to access all of the features, on the deployed link the website is already logged in. To login click 'logout' and then it will take you to the login component.
 
 The website has no password authentication and a user can login using one of the following usernames:
 
