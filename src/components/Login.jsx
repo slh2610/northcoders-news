@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Logout from './Logout';
-import './Login.css';
+import '../assets/Login.css';
 
 class Login extends Component {
   state = {

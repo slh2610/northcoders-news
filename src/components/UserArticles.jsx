@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import './Articles.css';
+import '../assets/Articles.css';
 
 const UserArticles = ({ articles, setSelectedUser }) => {
   const users = articles.map(user => {

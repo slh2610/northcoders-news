@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import PropTypes from 'prop-types';
 import * as api from '../api';
-import './Nav.css';
+import '../assets/Nav.css';
 
 class Nav extends Component {
   state = {

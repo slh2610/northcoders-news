@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ArticleDisplay.css';
+import '../assets/ArticleDisplay.css';
 import VotingTool from './VotingTool';
 import { navigate } from '@reach/router';
 import Comments from './Comments';

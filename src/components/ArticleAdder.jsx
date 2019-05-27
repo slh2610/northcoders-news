@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './ArticleAdder.css';
+import '../assets/ArticleAdder.css';
 import PropTypes from 'prop-types';
 
 class ArticleAdder extends Component {

@@ -4,7 +4,7 @@ import VotingTool from './VotingTool';
 import CommentAdder from './CommentAdder';
 import DeleteTool from './DeleteTool';
 import dayjs from 'dayjs';
-import './Comments.css';
+import '../assets/Comments.css';
 import * as api from '../api';
 
 class Comments extends Component {

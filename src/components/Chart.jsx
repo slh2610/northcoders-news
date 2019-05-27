@@ -1,10 +1,9 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import * as chartData from '../utils/chartData';
-import './Chart.css';
+import '../assets/Chart.css';
 
 const Chart = ({ articles }) => {
-  console.log(articles);
   const titles = chartData.getTitles(articles);
 
   const votes = chartData.getVotes(articles);

@@ -5,7 +5,7 @@ import UserArticles from './UserArticles';
 import Table from './Table';
 import PropTypes from 'prop-types';
 import * as api from '../api';
-import './Articles.css';
+import '../assets/Articles.css';
 import ArticleAdder from './ArticleAdder';
 import LoadingSpinner from './LoadingSpinner';
 

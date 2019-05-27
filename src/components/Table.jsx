@@ -1,5 +1,5 @@
 import React from 'react';
-import './Table.css';
+import '../assets/Table.css';
 
 const Table = ({ articles, selectedUser, backToChart }) => {
   const filteredArticles = articles.filter(article => {

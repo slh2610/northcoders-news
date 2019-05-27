@@ -1,5 +1,5 @@
 import React from 'react';
-import './UsersPage.css';
+import '../assets/UsersPage.css';
 
 const UsersPage = ({ user }) => {
   if (!user) return <p>Loading....</p>;
