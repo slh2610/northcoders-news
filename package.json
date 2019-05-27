@@ -5,8 +5,10 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
+    "chai": "^4.2.0",
     "chart.js": "^2.7.3",
     "dayjs": "^1.7.7",
+    "enzyme": "^3.9.0",
     "react": "^16.5.2",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.5.2",
